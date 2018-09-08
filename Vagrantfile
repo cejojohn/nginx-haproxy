@@ -25,6 +25,11 @@ Vagrant.configure("2") do |config|
 # Ansible provisioning
   config.vm.provision "ansible" do |ansible|
     ansible.playbook = "site.yaml"
-    ansible.inventory_path = "inventory"
+    # ansible.inventory_path = "inventory"
+    ansible.groups = {
+    "nginx" => ["backend-instance-[1:2].com","paramatta-friends.com"],
+    "haproxy" => ["paramatta-loadbalancer.com"]
+  }
+
   end
 end

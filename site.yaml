@@ -7,6 +7,14 @@
       apt:
         name: nginx
         state: present
+    - name: NGINX CONF Template
+      template:
+        src: templates/nginx.conf.j2
+        dest: /etc/nginx/nginx.conf
+    - name: NGINX home page
+      template:
+        src: templates/index.html.j2
+        dest: /usr/share/nginx/html/index.html
 
 - name: HAPROXY NODES
   hosts: haproxy

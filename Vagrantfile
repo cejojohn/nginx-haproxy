@@ -3,7 +3,6 @@ Vagrant.configure("2") do |config|
   config.landrush.enabled = true
   config.landrush_ip.auto_install = true
   backend_instances = 2
-
 # NGINX Instance to Server /campel-street
   (1..backend_instances).each do |instance_number|
     config.vm.define "backend-instance-#{instance_number}.com" do |host|
@@ -30,6 +29,5 @@ Vagrant.configure("2") do |config|
     "nginx" => ["backend-instance-[1:2].com","paramatta-friends.com"],
     "haproxy" => ["paramatta-loadbalancer.com"]
   }
-
   end
 end

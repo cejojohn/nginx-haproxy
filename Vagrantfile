@@ -25,5 +25,6 @@ Vagrant.configure("2") do |config|
 # Ansible provisioning
   config.vm.provision "ansible" do |ansible|
     ansible.playbook = "site.yaml"
+    ansible.inventory_path = "inventory"
   end
 end

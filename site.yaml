@@ -7,3 +7,12 @@
       apt:
         name: nginx
         state: present
+
+- name: HAPROXY NODES
+  hosts: haproxy
+  become: yes
+  tasks:
+    - name: Install HAPROXY
+      apt:
+        name: haproxy
+        state: present

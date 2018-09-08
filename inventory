@@ -12,3 +12,7 @@ paramatta-friends.com ansible_host=127.0.0.1 ansible_port=2201 ansible_user='vag
 
 [haproxy]
 paramatta-loadbalancer.com ansible_host=127.0.0.1 ansible_port=2202 ansible_user='vagrant' ansible_ssh_private_key_file='/Users/josepel/lab/learn_nginx/nginx-haproxy/.vagrant/machines/paramatta-loadbalancer.com/virtualbox/private_key'
+
+[backend-nodes]
+backend-instance-1.com ansible_host=127.0.0.1 ansible_port=2222 ansible_user='vagrant' ansible_ssh_private_key_file='/Users/josepel/lab/learn_nginx/nginx-haproxy/.vagrant/machines/backend-instance-1.com/virtualbox/private_key'
+backend-instance-2.com ansible_host=127.0.0.1 ansible_port=2200 ansible_user='vagrant' ansible_ssh_private_key_file='/Users/josepel/lab/learn_nginx/nginx-haproxy/.vagrant/machines/backend-instance-2.com/virtualbox/private_key'

@@ -24,3 +24,11 @@
       apt:
         name: haproxy
         state: present
+    - name: copy haproxy conf
+      template:
+        src: templates/haproxy-loadbalancer.conf.j2
+        dest: /etc/haproxy/haproxy.cfg
+    - name: update system defaults to enable init scripts for haproxy
+      template:
+        src: templates/haproxy-default.j2
+        dest: /etc/default/haproxy

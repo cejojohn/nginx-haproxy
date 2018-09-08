@@ -27,7 +27,8 @@ Vagrant.configure("2") do |config|
     ansible.groups = {
     "nginx" => ["backend-instance-[1:2].com","paramatta-friends.com"],
     "haproxy" => ["paramatta-loadbalancer.com"],
-    "nginx-router" => ["paramatta-friends.com"]
+    "nginx-router" => ["paramatta-friends.com"],
+    "backend-nodes" => ["backend-instance-[1:2].com"]
   }
   end
 end

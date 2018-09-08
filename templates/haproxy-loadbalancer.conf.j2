@@ -24,5 +24,5 @@ frontend http_front
 backend http_back
   balance roundrobin
 	{% for backend_nodes in groups['backend-nodes'] %}
-  server backend_nodes backend_nodes:80 check
+  server {{ backend_nodes }} {{ backend_nodes }}:80 check
 	{% endfor %}

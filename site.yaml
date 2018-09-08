@@ -1,0 +1,9 @@
+---
+- name: NGINX NODES
+  hosts: nginx
+  become: yes
+  tasks:
+    - name: Install NGINX
+      apt:
+        name: nginx
+        state: present

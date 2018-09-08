@@ -1,0 +1,11 @@
+server {
+	server_name paramatta-friends.com;
+	listen 80;
+	location /cowper {
+		proxy_pass https://www.google.com.au/;
+	}
+
+	location /campel {
+		proxy_pass http://paramatta-loadbalancer.com;
+	}
+}

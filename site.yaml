@@ -16,6 +16,15 @@
         src: templates/index.html.j2
         dest: /usr/share/nginx/html/index.html
 
+- name: Apply routing logic
+  hosts: nginx-router
+  become: yes
+  tasks:
+    - name: Applying routing logic
+      template:
+        src: templates/routes.j2
+        dest: /etc/nginx/sites-enabled/routes
+
 - name: HAPROXY NODES
   hosts: haproxy
   become: yes
